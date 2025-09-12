@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="Portfólio de Suriel Gomes - Desenvolvedor Web especializado em Python, HTML e CSS">
+    <!--Pegando a referência no font awesome (necessário para os icons)-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <title>Portfolio - Suriel Gomes | Desenvolvedor Web</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!--barra de navegação-->
+            <nav id="navbar">
+
+                <!--itens da barra de navegação-->
+                <ul id="nav_list">
+                    <li class="nav-item active">
+                        <a href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services">Especialidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact">Contato</a>
+                    </li>
+                </ul>
+
+                <!--barrinhas que só vão aparecer no mobile-->
+                <button id="mobile_btn" aria-label="Abrir menu de navegação no mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!--menu das barrinhas propriamente dito-->
+                <div id="mobile_menu">
+                    <ul id="mobile_nav_list">
+                        <li class="nav-item active">
+                        <a href="#home">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#services">Especialidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projects">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div id="apresentacao" class="cabeçalho">
+                <img src="./src/img/eu-na-moto.jpeg" alt="Foto de Suriel Gomes">
+                <h1> Suriel Gomes </h1>
+                <p> Desenvolvedor Web </p>
+
+                <div class="social-media-buttons">
+                    <a href="" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/surielgomes/" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <a href="https://github.com/surieltech" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">Sobre Mim</h2>
+
+                <div id="sobre_mim">
+                    <p> Me chamo Suriel Gomes e sou estudante de Análise e Desenvolvimento de Sistemas (ADS) com formação técnica na área, além de também possuir uma graduação em História. Tenho interesse em desenvolvimento full-stack e análise de dados. Atualmente, estudo Python como linguagem principal - embora também tenha noções em C/C++ e Java - e estou aprimorando meus conhecimentos em Angular, Node, SQL, Git e estruturas de dados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+
+                <h2 class="section-title">Minhas Especialidades</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Criação de sites responsivos e modernos utilizando HTML, CSS, JavaScript e frameworks modernos.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <h3>UX/UI Design</h3>
+                        <p>Design de interfaces intuitivas e agradáveis com foco na experiência do usuário e usabilidade.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Otimização de Performance</h3>
+                        <p>Melhoria de velocidade e performance de sites e aplicações para melhor experiência do usuário.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Meus Projetos</h2>
+                <div class="projects-box">
+
+                    <div class="projects-card">
+                        <img src="src/img/evento-academico-screenshot.png" alt="Imagem do Projeto 1">
+                        <h3 class="projects-info">Inscrição de Evento Acadêmico</h3>
+                        <p class="projects-description">Página feita para simular uma inscrição para um evento acadêmico</p>
+                    </div>
+
+                    <div class="projects-card">
+                        <img src="src/img/toggle-dark-mode-screenshot.png" alt="Imagem do Projeto 2">
+                        <h3 class="projects-info">Dark Mode</h3>
+                        <p class="projects-description">Página feita para simular o modo escuro de um site</p>
+                    </div>
+
+                    <div class="projects-card">
+                        <img src="src/img/toogle-light-mode-screenshot.png" alt="Imagem do Projeto 3">
+                        <h3 class="projects-info">Light Mode</h3>
+                        <p class="projects-description">Página feita para simular o modo claro de um site</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+
+                <!--Formulário para entrar em contato enviando uma mensagem através do e-mail-->
+                <h2 class="section-title">Entre em contato:</h2>
+                <form class="formulario-contato" id="formulario">
+
+                    <div class="form-container">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo:">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required placeholder="Digite seu melhor e-mail:">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" required placeholder="Digite sua mensagem:"></textarea>
+                        </div>
+                        <button type="submit">Enviar mensagem</button>
+                    </div>
+        
+                </form>
+
+                <h3> Minhas redes sociais:</h3>
+                <div class="social-media-buttons">
+                    <a href="" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/surielgomes" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <a href="https://github.com/surieltech" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <span id="copyright">
+                &copy; 2025 SurielTech - Todos os direitos reservados
+            </span>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="src/javascript/script.js"></script>
+
+</body>
+</html>
