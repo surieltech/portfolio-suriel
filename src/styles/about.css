@@ -1,0 +1,13 @@
+/* About Section */
+#about {
+    background-color: var(--bg-color);
+}
+
+#sobre_mim {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 0 1rem;
+}
