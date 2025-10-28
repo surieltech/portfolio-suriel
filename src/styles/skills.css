@@ -1,0 +1,204 @@
+/* ===== SKILLS SECTION - BRANCO E COMPACTO ===== */
+#skills {
+    padding: 60px 0;
+    background: var(--white);
+}
+
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.skills-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.skills-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--black);
+}
+
+.skills-header p {
+    color: var(--gray-medium);
+    font-size: 1rem;
+}
+
+/* ===== LAYOUT COMPACTO ===== */
+.skills-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.skills-category {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--gray-lighter);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.skills-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--red-lighter);
+}
+
+.skills-category h3 i {
+    color: var(--primary-red);
+}
+
+/* ===== HARD SKILLS - COMPACTO ===== */
+.hard-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+}
+
+.skill-item {
+    background: var(--gray-lighter);
+    padding: 0.8rem 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.skill-item:hover {
+    border-color: var(--primary-red);
+    background: var(--white);
+}
+
+.skill-item i {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+    color: var(--primary-red);
+    display: block;
+}
+
+.skill-item span {
+    font-weight: 600;
+    color: var(--black);
+    font-size: 0.8rem;
+    display: block;
+}
+
+/* ===== SOFT SKILLS - COMPACTO ===== */
+.soft-skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.soft-skill-item {
+    background: var(--gray-lighter);
+    padding: 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.soft-skill-item:hover {
+    border-left-color: var(--primary-red);
+    background: var(--white);
+}
+
+.soft-skill-item i {
+    font-size: 1.2rem;
+    color: var(--primary-red);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(220, 38, 38, 0.1);
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.soft-skill-content h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.soft-skill-content p {
+    font-size: 0.75rem;
+    color: var(--gray-medium);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    #skills {
+        padding: 40px 0;
+    }
+    
+    .skills-categories {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .skills-category {
+        padding: 1.2rem;
+    }
+    
+    .skills-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hard-skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .hard-skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.6rem;
+    }
+    
+    .skill-item {
+        padding: 0.6rem 0.3rem;
+    }
+    
+    .skill-item i {
+        font-size: 1.4rem;
+    }
+    
+    .skill-item span {
+        font-size: 0.7rem;
+    }
+    
+    .soft-skill-item {
+        padding: 0.7rem;
+    }
+    
+    .soft-skill-item i {
+        font-size: 1.1rem;
+        width: 28px;
+        height: 28px;
+    }
+    
+    .soft-skill-content h4 {
+        font-size: 0.85rem;
+    }
+    
+    .soft-skill-content p {
+        font-size: 0.7rem;
+    }
+}
