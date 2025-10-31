@@ -158,13 +158,25 @@ header.scrolled {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+    position: relative;
 }
 
-.hamburger-line {
+.mobile-toggle .hamburger-line {
+    display: block;
     width: 25px;
-    height: 2px;
-    background: var(--text-primary);
+    height: 3px;
+    background: #000;
     transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+body.dark-mode .mobile-toggle .hamburger-line {
+    background: #fff;
 }
 
 .mobile-toggle.active .hamburger-line:nth-child(1) {
@@ -384,4 +396,85 @@ body.dark-mode .mobile-action-btn {
     .mobile-menu {
         width: 100%;
     }
+}
+
+
+/* ===== CORREÇÕES ESPECÍFICAS NA NAVBAR ===== */
+
+/* Correção da cor do logo no modo claro */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo-text {
+    color: var(--black) !important; /* Força cor preta */
+}
+
+.logo-accent {
+    color: var(--primary-red) !important;
+}
+
+.logo-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-red);
+    border-radius: 50%;
+}
+
+/* No modo escuro, o logo fica branco */
+body.dark-mode .logo-text {
+    color: var(--white) !important;
+}
+
+body.dark-mode .logo-accent {
+    color: var(--primary-red) !important; /* Mantém vermelho mesmo no dark */
+}
+
+/* ===== CORREÇÃO DO BOTÃO FECHAR DUPLICADO ===== */
+
+/* Remove qualquer botão fechar extra no overlay */
+.mobile-overlay .mobile-close,
+.mobile-overlay .nav-close,
+.mobile-overlay .close-btn {
+    display: none !important;
+}
+
+/* Garante que só tem um botão fechar visível */
+.mobile-menu-header .mobile-close {
+    display: flex !important;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1003;
+}
+
+/* No modo escuro */
+body.dark-mode .mobile-close {
+    color: var(--white);
+}
+
+/* Remove qualquer outro botão fechar que possa existir */
+.mobile-menu .mobile-close:not(:first-child),
+.mobile-menu .nav-close:not(:first-child) {
+    display: none !important;
+}
+
+/* ===== GARANTIR QUE SÓ EXISTA UM BOTÃO FECHAR ===== */
+/* Estes seletores removem botões duplicados específicos */
+.mobile-menu > .mobile-close:not(.mobile-menu-header .mobile-close),
+.mobile-menu > .close-btn,
+.mobile-menu > .nav-close {
+    display: none !important;
 }

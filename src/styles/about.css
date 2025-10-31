@@ -211,6 +211,138 @@
     line-height: 1.4;
 }
 
+/* ===== CORREÇÃO DA SEÇÃO COMPETÊNCIAS NO MOBILE ===== */
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .profile-section {
+        order: -1;
+    }
+    
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .profile-stats {
+        justify-content: center;
+    }
+    
+    /* CORREÇÃO DAS COMPETÊNCIAS - CENTRALIZADO */
+    .competencies {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .competencies-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        margin: 0 auto;
+        justify-items: center;
+    }
+    
+    .competency-item {
+        width: 100%;
+        max-width: 350px;
+        text-align: left;
+        justify-content: flex-start;
+    }
+    
+    .about-actions {
+        justify-content: center;
+    }
+    
+    .about-text p {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    #about {
+        padding: 40px 0;
+    }
+    
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* CORREÇÃO PARA TELAS MUITO PEQUENAS */
+    .competency-item {
+        max-width: 100%;
+        padding: 0.8rem;
+    }
+    
+    .competency-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .competency-content h4 {
+        font-size: 0.95rem;
+    }
+    
+    .competency-content p {
+        font-size: 0.8rem;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.5rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .about-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+/* Ajuste extra para garantir o alinhamento */
+.competencies h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.competencies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+}
+
+.competency-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Garantir que o container principal esteja centralizado */
+.about-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.competencies {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* ===== BOTÕES ===== */
 .about-actions {
     display: flex;
