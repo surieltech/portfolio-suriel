@@ -1,4 +1,7 @@
-// Navbar Functionality
+// ============================================
+// NAVBAR FUNCTIONALITY (FUNCIONAL)
+// ============================================
+
 class Navbar {
     constructor() {
         this.mobileToggle = document.getElementById('mobileToggle');
@@ -89,7 +92,10 @@ class Navbar {
     }
 }
 
-// Theme Functionality
+// ============================================
+// THEME FUNCTIONALITY (USANDO dark-mode NO BODY)
+// ============================================
+
 class ThemeManager {
     constructor() {
         this.themeToggle = document.getElementById('theme-toggle');
@@ -107,6 +113,9 @@ class ThemeManager {
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-mode');
             this.updateIcons('dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            this.updateIcons('light');
         }
     }
 
@@ -142,7 +151,10 @@ class ThemeManager {
     }
 }
 
-// Translation Functionality
+// ============================================
+// TRANSLATION FUNCTIONALITY
+// ============================================
+
 class TranslationManager {
     constructor() {
         this.translateBtn = document.getElementById('translate-btn');
@@ -176,7 +188,23 @@ class TranslationManager {
                 'Contato': 'Contato',
                 'Vamos Conversar': 'Vamos Conversar',
                 'Tema': 'Tema',
-                'Currículo': 'Currículo'
+                'Currículo': 'Currículo',
+                'Todos os Projetos': 'Todos os Projetos',
+                'Projetos Profissionais': 'Projetos Profissionais',
+                'Projetos Pessoais': 'Projetos Pessoais',
+                'projetos encontrados': 'projetos encontrados',
+                'Nenhum projeto encontrado': 'Nenhum projeto encontrado',
+                'Tente selecionar outra categoria ou verifique mais tarde.': 'Tente selecionar outra categoria ou verifique mais tarde.',
+                'Ver Mais no GitHub': 'Ver Mais no GitHub',
+                'Nome Completo': 'Nome Completo',
+                'Seu nome completo': 'Seu nome completo',
+                'E-mail': 'E-mail',
+                'Seu melhor e-mail': 'Seu melhor e-mail',
+                'Assunto': 'Assunto',
+                'Assunto da mensagem': 'Assunto da mensagem',
+                'Mensagem': 'Mensagem',
+                'Insira sua mensagem aqui...': 'Insira sua mensagem aqui...',
+                'Enviar Mensagem': 'Enviar Mensagem'
             },
             en: {
                 'Início': 'Home',
@@ -186,95 +214,238 @@ class TranslationManager {
                 'Contato': 'Contact',
                 'Vamos Conversar': "Let's Talk",
                 'Tema': 'Theme',
-                'Currículo': 'Resume'
+                'Currículo': 'Resume',
+                'Todos os Projetos': 'All Projects',
+                'Projetos Profissionais': 'Professional Projects',
+                'Projetos Pessoais': 'Personal Projects',
+                'projetos encontrados': 'projects found',
+                'Nenhum projeto encontrado': 'No projects found',
+                'Tente selecionar outra categoria ou verifique mais tarde.': 'Try selecting another category or check back later.',
+                'Ver Mais no GitHub': 'See More on GitHub',
+                'Nome Completo': 'Full Name',
+                'Seu nome completo': 'Your full name',
+                'E-mail': 'Email',
+                'Seu melhor e-mail': 'Your best email',
+                'Assunto': 'Subject',
+                'Assunto da mensagem': 'Message subject',
+                'Mensagem': 'Message',
+                'Insira sua mensagem aqui...': 'Enter your message here...',
+                'Enviar Mensagem': 'Send Message'
             }
         };
 
         document.querySelectorAll('[data-translate]').forEach(element => {
             const key = element.getAttribute('data-translate');
             if (translations[this.currentLang][key]) {
-                element.textContent = translations[this.currentLang][key];
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = translations[this.currentLang][key];
+                } else {
+                    element.textContent = translations[this.currentLang][key];
+                }
             }
         });
     }
 
     updateButton() {
-        const span = this.mobileTranslateToggle.querySelector('span');
-        span.textContent = this.currentLang === 'pt' ? 'EN' : 'PT';
+        const span = this.mobileTranslateToggle.querySelector('span:last-child');
+        if (span) {
+            span.textContent = this.currentLang === 'pt' ? 'EN' : 'PT';
+        }
     }
 }
 
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new Navbar();
-    new ThemeManager();
-    new TranslationManager();
-});
+// ============================================
+// PROJECTS FILTER FUNCTIONALITY
+// ============================================
 
-
-
-
-
-
-//código em javascript para o envio do e-mail
-class ContactForm {
+class ProjectsFilter {
     constructor() {
-        this.form = $('#contact-form');
+        this.filterButtons = document.querySelectorAll('.filter-btn');
+        this.projectCards = document.querySelectorAll('.project-card');
+        this.projectsCount = document.getElementById('projects-count');
+        this.noProjectsMsg = document.getElementById('no-projects');
+        
         this.init();
     }
 
     init() {
-        this.form.on('submit', (e) => this.handleSubmit(e));
+        this.bindEvents();
+        this.updateProjectsCount();
+    }
+
+    bindEvents() {
+        this.filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                this.filterProjects(filter);
+                
+                // Update active button
+                this.filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    }
+
+    filterProjects(filter) {
+        let visibleCount = 0;
+        
+        this.projectCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            
+            if (filter === 'all' || category === filter) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+        
+        this.updateProjectsCount(visibleCount);
+    }
+
+    updateProjectsCount(count = null) {
+        if (count === null) {
+            count = document.querySelectorAll('.project-card:not(.hidden)').length;
+        }
+        
+        if (this.projectsCount) {
+            this.projectsCount.textContent = count;
+        }
+        
+        if (this.noProjectsMsg) {
+            this.noProjectsMsg.style.display = count === 0 ? 'block' : 'none';
+        }
+    }
+}
+
+// ============================================
+// CONTACT FORM FUNCTIONALITY (SEM JQUERY)
+// ============================================
+
+class ContactForm {
+    constructor() {
+        this.form = document.getElementById('contact-form');
+        this.init();
+    }
+
+    init() {
+        if (this.form) {
+            this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        }
     }
 
     handleSubmit(e) {
         e.preventDefault();
 
-        const nome = $('#nome').val().trim();
-        const email = $('#email').val().trim();
-        const mensagem = $('#mensagem').val().trim();
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const assunto = document.getElementById('assunto').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
 
-        if (!nome || !email || !mensagem) {
-            alert('Por favor, preencha todos os campos.');
+        if (!nome || !email || !assunto || !mensagem) {
+            this.showFormStatus('Por favor, preencha todos os campos.', 'error');
             return;
         }
 
         if (!this.isValidEmail(email)) {
-            alert('Por favor, insira um e-mail válido.');
+            this.showFormStatus('Por favor, insira um e-mail válido.', 'error');
             return;
         }
 
-        const assunto = `Contato do Portfolio - ${nome}`;
-        const corpo = `Nome: ${nome}%0D%0AE-mail: ${email}%0D%0A%0D%0AMensagem:%0D%0A${mensagem}`;
+        // Show loading state
+        const submitBtn = this.form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        submitBtn.disabled = true;
 
-        const mailtoLink = `mailto:grandesuriel@gmail.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+        // Prepare email
+        const assuntoFinal = `Contato Portfólio - ${assunto}`;
+        const corpo = `Nome: ${nome}%0D%0AE-mail: ${email}%0D%0AAssunto: ${assunto}%0D%0A%0D%0AMensagem:%0D%0A${mensagem}`;
+        const mailtoLink = `mailto:grandesuriel@gmail.com?subject=${encodeURIComponent(assuntoFinal)}&body=${encodeURIComponent(corpo)}`;
+
+        // Redirect to email client
         window.location.href = mailtoLink;
+
+        // Restore button after 3 seconds (time for email client to open)
+        setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            this.showFormStatus('Abrindo seu cliente de e-mail...', 'info');
+        }, 3000);
     }
 
     isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
+
+    showFormStatus(message, type) {
+        const statusElement = document.getElementById('form-status');
+        if (statusElement) {
+            statusElement.textContent = message;
+            statusElement.className = `form-status ${type}`;
+            statusElement.style.display = 'block';
+
+            // Hide after 5 seconds
+            setTimeout(() => {
+                statusElement.style.display = 'none';
+            }, 5000);
+        }
+    }
 }
 
-// Inicializar quando o documento estiver pronto
-$(document).ready(() => {
-    new ContactForm();
-});
+// ============================================
+// ANIMATIONS ON SCROLL
+// ============================================
 
-$(document).ready(function() {
-    // Mensagem de sucesso simples
-    $('#contact-form').on('submit', function() {
-        // Feedback visual imediato
-        const btn = $(this).find('button[type="submit"]');
-        const originalText = btn.text();
-        
-        btn.html('<i class="fas fa-spinner fa-spin"></i> Enviando...');
-        btn.prop('disabled', true);
-        
-        setTimeout(() => {
-            btn.html(originalText);
-            btn.prop('disabled', false);
-        }, 10000); // 10 segundos, tempo para o redirecionamento
-    });
+class ScrollAnimations {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.skill-item, .project-card, .competency-item').forEach(el => {
+            observer.observe(el);
+        });
+    }
+}
+
+// ============================================
+// UPDATE COPYRIGHT YEAR
+// ============================================
+
+function updateCopyrightYear() {
+    const copyrightElement = document.getElementById('copyright');
+    if (copyrightElement) {
+        const currentYear = new Date().getFullYear();
+        copyrightElement.textContent = `© ${currentYear} SurielTech - Todos os direitos reservados`;
+    }
+}
+
+// ============================================
+// INITIALIZE EVERYTHING
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    new Navbar();
+    new ThemeManager();
+    new TranslationManager();
+    new ProjectsFilter();
+    new ContactForm();
+    new ScrollAnimations();
+    updateCopyrightYear();
 });
