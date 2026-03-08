@@ -126,6 +126,33 @@
     z-index: 1;
 }
 
+/* Estilos específicos para cada filtro */
+.filter-btn[data-filter="landing"] i {
+    color: #ff6b6b;
+}
+
+.filter-btn[data-filter="landing"]:hover {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+}
+
+.filter-btn[data-filter="landing"].active {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+}
+
+.filter-btn[data-filter="other"] i {
+    color: #4ecdc4;
+}
+
+.filter-btn[data-filter="other"]:hover {
+    border-color: #4ecdc4;
+    color: #4ecdc4;
+}
+
+.filter-btn[data-filter="other"].active {
+    background: linear-gradient(135deg, #4ecdc4, #45b7aa);
+}
+
 .filter-counter {
     background: var(--bg-secondary);
     padding: 0.5rem 1.2rem;
@@ -167,6 +194,15 @@
     opacity: 1;
     transform: translateY(0);
     animation: cardAppear 0.6s ease-out;
+}
+
+/* Bordas laterais para categorias */
+.project-card[data-category="landing"] {
+    border-left: 4px solid #ff6b6b;
+}
+
+.project-card[data-category="other"] {
+    border-left: 4px solid #4ecdc4;
 }
 
 .project-card.hidden {
@@ -245,14 +281,18 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.project-badge.professional {
-    background: rgba(37, 99, 235, 0.9);
+/* Badge para Landing Pages */
+.project-badge.landing {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
     color: white;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
 }
 
-.project-badge.personal {
-    background: rgba(16, 185, 129, 0.9);
+/* Badge para Outros Projetos */
+.project-badge.other {
+    background: linear-gradient(135deg, #4ecdc4, #45b7aa);
     color: white;
+    box-shadow: 0 4px 10px rgba(78, 205, 196, 0.3);
 }
 
 /* ===== OVERLAY DA IMAGEM ===== */
@@ -362,8 +402,13 @@
     font-size: 0.9rem;
 }
 
-.project-type i {
-    color: var(--primary-red);
+/* Cores dos ícones por categoria */
+.project-card[data-category="landing"] .project-type i {
+    color: #ff6b6b;
+}
+
+.project-card[data-category="other"] .project-type i {
+    color: #4ecdc4;
 }
 
 .project-status i {
@@ -492,4 +537,12 @@
 
 [data-theme="dark"] .project-badge {
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .project-badge.landing {
+    background: linear-gradient(135deg, #ff4757, #ff6b81);
+}
+
+[data-theme="dark"] .project-badge.other {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
 }

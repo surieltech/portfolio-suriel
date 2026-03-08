@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="Portfólio de Suriel Gomes - Desenvolvedor Web especializado em Python, HTML e CSS">
+     <meta name="description" content="Portfólio de Suriel Gomes - Desenvolvedor Web especializado em Python, Node, HTML e CSS">
     <!--Pegando a referência no font awesome (necessário para os icons)-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <link rel="stylesheet" href="src/styles/style.css">
@@ -117,7 +117,7 @@
     <main>
         <section id="home">
             <div id="apresentacao" class="cabeçalho">
-                <img src="./src/img/foto-perfil-suriel.jpg" alt="Foto de Suriel Gomes">
+                <img src="./src/img/eu-para-portfolio-bonito.jpeg" alt="Foto de Suriel Gomes">
                 <h1> Suriel Gomes </h1>
                 <p> Desenvolvedor Web </p>
 
@@ -152,7 +152,7 @@
                     <!-- Coluna da Esquerda - Perfil -->
                     <div class="profile-section">
                         <div class="profile-image">
-                            <img src="./src/img/eu-para-portfolio-1.jpeg" alt="Suriel Gomes">
+                            <img src="./src/img/eu-para-portfolio-bonito.jpeg" alt="Suriel Gomes">
                         </div>
                         
                         <div class="profile-info">
@@ -165,11 +165,11 @@
                                     <span class="stat-label">Anos de Estudo</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="stat-number">10+</span>
+                                    <span class="stat-number">20+</span>
                                     <span class="stat-label">Projetos</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="stat-number">5+</span>
+                                    <span class="stat-number">10+</span>
                                     <span class="stat-label">Tecnologias</span>
                                 </div>
                             </div>
@@ -179,9 +179,9 @@
                     <!-- Coluna da Direita - Conteúdo -->
                     <div class="about-main">
                         <div class="about-text">
-                            <p>Olá! Tudo bem? Sou Suriel Gomes, desenvolvedor Full-Stack de 21 anos, residente em Manaus, Amazonas. Minha trajetória acadêmica combina uma licenciatura em História com estudos atuais em Análise e Desenvolvimento de Sistemas e capacitação em Desenvolvimento Web Full Stack. Essa formação dupla me permite abordar o desenvolvimento de software com uma perspectiva única, onde o rigor técnico encontra a sensibilidade humana.</p><br>
+                            <p>Olá! Tudo bem? Sou Suriel Gomes, desenvolvedor Full-Stack de 21 anos, residente em Manaus, Amazonas. Minha trajetória acadêmica combina uma licenciatura em História com estudos atuais em Análise e Desenvolvimento de Sistemas, curso técnico em Desenvolvimento de Sistemas pelo SENAI e capacitação em Desenvolvimento Web Full Stack. Essa formação dupla me permite abordar o desenvolvimento de software com uma perspectiva única, onde o rigor técnico encontra a sensibilidade humana.</p><br>
 
-                            <p>Especializo-me em criar soluções digitais centradas na experiência do usuário, utilizando HTML, CSS e JavaScript como linguagens principais, mas também com conhecimentos de Angular, Python, Node.js, MySQL e Git. Trabalho com metodologias ágeis e tenho experiência prática como desenvolvedor freelancer, criando interfaces e landing pages focadas em necessidades reais, além de habilidades em gestão de projetos com Trello e Notion.</p>
+                            <p>Especializo-me em criar soluções digitais centradas na experiência do usuário, utilizando HTML, CSS e JavaScript como linguagens principais, mas também com conhecimentos de React, Python, Node.js, MySQL e Git. Trabalho com metodologias ágeis e tenho experiência prática como desenvolvedor freelancer, criando interfaces e landing pages focadas em necessidades reais, além de habilidades em gestão de projetos com Trello e Notion.</p>
                             </div>
                         </div>
 
@@ -260,8 +260,8 @@
                             <span>Node.js</span>
                         </div>
                         <div class="skill-item">
-                            <i class="fab fa-angular"></i>
-                            <span>Angular</span>
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-python"></i>
@@ -355,13 +355,13 @@
                             <i class="fas fa-layer-group"></i>
                             <span>Todos os Projetos</span>
                         </button>
-                        <button class="filter-btn" data-filter="professional">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Projetos Profissionais</span>
+                        <button class="filter-btn" data-filter="landing">
+                            <i class="fas fa-rocket"></i>
+                            <span>Landing Pages</span>
                         </button>
-                        <button class="filter-btn" data-filter="personal">
-                            <i class="fas fa-user"></i>
-                            <span>Projetos Pessoais</span>
+                        <button class="filter-btn" data-filter="other">
+                            <i class="fas fa-code"></i>
+                            <span>Outros Projetos</span>
                         </button>
                     </div>
                     
@@ -372,24 +372,26 @@
 
                 <!-- Grid de Projetos -->
                 <div class="projects-grid">
-                    <!-- Projeto Profissional 1 -->
-                    <article class="project-card" data-category="professional" data-tech="html,css,js">
+                    <!-- LANDING PAGES (Destaque para vendas) -->
+                    
+                    <!-- Landing Page 1 - Clínica Odontológica -->
+                    <article class="project-card" data-category="landing" data-tech="html,css,js">
                         <a href="https://ceogloriaandrade.com/" class="project-link" target="_blank" rel="noopener noreferrer">
                             <div class="project-image">
                                 <img src="src/img/landing-page-clinica-odontologica.png" 
                                     alt="Landing Page de Clínica Odontológica - Site profissional" 
                                     loading="lazy">
-                                <div class="project-badge professional">
-                                    <i class="fas fa-briefcase"></i>
-                                    <span>Profissional</span>
+                                <div class="project-badge landing">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Landing Page</span>
                                 </div>
                                 <div class="project-overlay">
                                     <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3>Clínica Odontológica</h3>
-                                <p>Site profissional para clínica odontológica com agendamento online, informações de serviços e design responsivo.</p>
+                                <h3>Clínica Odontológica Glória Andrade</h3>
+                                <p>Landing page profissional para clínica odontológica com informações de serviços e design responsivo focado em conversão.</p>
                                 <div class="project-tech">
                                     <span class="tech-tag">HTML</span>
                                     <span class="tech-tag">CSS</span>
@@ -398,8 +400,8 @@
                                 </div>
                                 <div class="project-meta">
                                     <span class="project-type">
-                                        <i class="fas fa-briefcase"></i>
-                                        Projeto Profissional
+                                        <i class="fas fa-rocket"></i>
+                                        Landing Page
                                     </span>
                                     <span class="project-status">
                                         <i class="fas fa-check-circle"></i>
@@ -410,24 +412,24 @@
                         </a>
                     </article>
 
-                    <!-- Projeto Profissional 2 -->
-                    <article class="project-card" data-category="professional" data-tech="html, css, js">
+                    <!-- Landing Page 2 - Cafeteria -->
+                    <article class="project-card" data-category="landing" data-tech="html,css,js">
                         <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
                             <div class="project-image">
-                                <img src="#" 
-                                    alt="Projeto Profissional em Desenvolvimento" 
+                                <img src="src/img/landing-page-cafeteria-placeholder.jpg" 
+                                    alt="Landing Page de Cafeteria" 
                                     loading="lazy">
-                                <div class="project-badge professional">
-                                    <i class="fas fa-briefcase"></i>
-                                    <span>Profissional</span>
+                                <div class="project-badge landing">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Landing Page</span>
                                 </div>
                                 <div class="project-overlay">
                                     <span><i class="fas fa-lock"></i> Em Desenvolvimento</span>
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3>Landing Page de Cafeteria</h3>
-                                <p>Site responsivo para cafeteria com cardápio digital (em página própria), galeria de imagens, carrossel de imagens do ambiente, carrossel de eventos e design otimizado para mobile.</p>
+                                <h3>Landing Page Cafeteria</h3>
+                                <p>Landing page para cafeteria com cardápio digital, galeria de imagens, carrossel de eventos e design otimizado para mobile e conversão de clientes.</p>
                                 <div class="project-tech">
                                     <span class="tech-tag">HTML</span>
                                     <span class="tech-tag">CSS</span>
@@ -436,8 +438,8 @@
                                 </div>
                                 <div class="project-meta">
                                     <span class="project-type">
-                                        <i class="fas fa-briefcase"></i>
-                                        Projeto Profissional
+                                        <i class="fas fa-rocket"></i>
+                                        Landing Page
                                     </span>
                                     <span class="project-status">
                                         <i class="fas fa-tools"></i>
@@ -448,24 +450,183 @@
                         </a>
                     </article>
 
-                    <!-- Projeto Pessoal 1 -->
-                    <article class="project-card" data-category="personal" data-tech="html,css,js">
-                        <a href="https://surieltech.github.io/cadastro-evento-academico/" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <!-- Landing Page 3 - Restaurante -->
+                    <article class="project-card" data-category="landing" data-tech="html,css,js,responsive">
+                        <a href="https://surieltech.github.io/landing-page-restaurante/" class="project-link" target="_blank" rel="noopener noreferrer">
                             <div class="project-image">
-                                <img src="src/img/evento-academico-screenshot.png" 
-                                    alt="Sistema de Inscrição de Evento Acadêmico" 
+                                <img src="src/img/landing-page-restaurante-screenshot.png" 
+                                    alt="Landing Page Responsiva para Restaurante" 
                                     loading="lazy">
-                                <div class="project-badge personal">
-                                    <i class="fas fa-user"></i>
-                                    <span>Pessoal</span>
+                                <div class="project-badge landing">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Landing Page</span>
                                 </div>
                                 <div class="project-overlay">
                                     <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3>Inscrição de Evento Acadêmico</h3>
-                                <p>Sistema de cadastro para eventos acadêmicos com validação de dados, confirmação de inscrição e dashboard administrativo.</p>
+                                <h3>Cozinha da Roberta</h3>
+                                <p>Landing page para restaurante com cardápio digital, galeria de imagens, carrossel de eventos e design otimizado para atrair e converter visitantes.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Responsive</span>
+                                    <span class="tech-tag">CTA</span>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="project-type">
+                                        <i class="fas fa-rocket"></i>
+                                        Landing Page
+                                    </span>
+                                    <span class="project-status">
+                                        <i class="fas fa-code"></i>
+                                        Open Source
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Landing Page 4 - Barbearia -->
+                    <article class="project-card" data-category="landing" data-tech="html,css,js,responsive">
+                        <a href="https://surieltech.github.io/landing-page-barbearia/" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-image">
+                                <img src="src/img/landing-page-barbearia-screenshot.png" 
+                                    alt="Landing Page Responsiva para Barbearia" 
+                                    loading="lazy">
+                                <div class="project-badge landing">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Landing Page</span>
+                                </div>
+                                <div class="project-overlay">
+                                    <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Barbearia Alpha</h3>
+                                <p>Landing page para barbearia com catálogo de serviços, galeria de imagens, carrossel de avaliações e design pensado para agendamento de horários.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Responsive</span>
+                                    <span class="tech-tag">SEO</span>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="project-type">
+                                        <i class="fas fa-rocket"></i>
+                                        Landing Page
+                                    </span>
+                                    <span class="project-status">
+                                        <i class="fas fa-code"></i>
+                                        Open Source
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Landing Page 5 - Petshop Bicho Legal -->
+                    <article class="project-card" data-category="landing" data-tech="html,css,js,responsive">
+                        <a href="https://surieltech.github.io/landing-page-petshop/" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-image">
+                                <img src="src/img/landing-page-petshop-screenshot.png" 
+                                    alt="Landing Page para Petshop Bicho Legal - Site profissional" 
+                                    loading="lazy">
+                                <div class="project-badge landing">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Landing Page</span>
+                                </div>
+                                <div class="project-overlay">
+                                    <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Petshop Bicho Legal</h3>
+                                <p>Landing page completa para petshop com catálogo de serviços (banho, tosa, veterinário), seção de produtos e agendamento online.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Responsive</span>
+                                    <span class="tech-tag">UX/UI</span>
+                                    <span class="tech-tag">Agendamento</span>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="project-type">
+                                        <i class="fas fa-rocket"></i>
+                                        Landing Page
+                                    </span>
+                                    <span class="project-status">
+                                        <i class="fas fa-code"></i>
+                                        Open Source
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- OUTROS PROJETOS (Foco técnico) -->
+
+                    <!-- Outro Projeto 5 - Aplicação de Clima com API -->
+                    <article class="project-card" data-category="other" data-tech="html,css,js,api,async">
+                        <a href="https://surieltech.github.io/api-clima/" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-image">
+                                <img src="src/img/weather-app-screenshot.png" 
+                                    alt="Aplicação de Clima com API - Previsão do tempo global" 
+                                    loading="lazy">
+                                <div class="project-badge other">
+                                    <i class="fas fa-cloud-sun"></i>
+                                    <span>Aplicação Web</span>
+                                </div>
+                                <div class="project-overlay">
+                                    <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Weather App</h3>
+                                <p>Aplicação web de previsão do tempo que consome API pública (OpenWeatherMap) para exibir condições climáticas em tempo real de qualquer cidade do mundo. Inclui temperatura, umidade, velocidade do vento, data e hora e ícones dinâmicos baseados nas condições atuais.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">API REST</span>
+                                    <span class="tech-tag">Async/Await</span>
+                                    <span class="tech-tag">Fetch API</span>
+                                    <span class="tech-tag">JSON</span>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="project-type">
+                                        <i class="fas fa-code"></i>
+                                        Aplicação Web
+                                    </span>
+                                    <span class="project-status">
+                                        <i class="fas fa-cloud-sun"></i>
+                                        Open Source
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <!-- Outro Projeto 1 - Evento Acadêmico -->
+                    <article class="project-card" data-category="other" data-tech="html,css,js">
+                        <a href="https://surieltech.github.io/cadastro-evento-academico/" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-image">
+                                <img src="src/img/evento-academico-screenshot.png" 
+                                    alt="Sistema de Inscrição de Evento Acadêmico" 
+                                    loading="lazy">
+                                <div class="project-badge other">
+                                    <i class="fas fa-code"></i>
+                                    <span>Sistema Web</span>
+                                </div>
+                                <div class="project-overlay">
+                                    <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Sistema de Inscrição para Eventos</h3>
+                                <p>Sistema completo de cadastro para eventos acadêmicos com validação de dados e confirmação de inscrição.</p>
                                 <div class="project-tech">
                                     <span class="tech-tag">HTML</span>
                                     <span class="tech-tag">CSS</span>
@@ -474,8 +635,8 @@
                                 </div>
                                 <div class="project-meta">
                                     <span class="project-type">
-                                        <i class="fas fa-user"></i>
-                                        Projeto Pessoal
+                                        <i class="fas fa-code"></i>
+                                        Sistema Web
                                     </span>
                                     <span class="project-status">
                                         <i class="fas fa-code"></i>
@@ -486,16 +647,16 @@
                         </a>
                     </article>
 
-                    <!-- Projeto Pessoal 2 -->
-                    <article class="project-card" data-category="personal" data-tech="html,css,js">
+                    <!-- Outro Projeto 2 - Sorteador de Números -->
+                    <article class="project-card" data-category="other" data-tech="html,css,js">
                         <a href="https://surieltech.github.io/sorteador-de-numeros/" class="project-link" target="_blank" rel="noopener noreferrer">
                             <div class="project-image">
                                 <img src="src/img/sorteador-numeros-screenshot.png" 
                                     alt="Sorteador de Números Aleatórios" 
                                     loading="lazy">
-                                <div class="project-badge personal">
-                                    <i class="fas fa-user"></i>
-                                    <span>Pessoal</span>
+                                <div class="project-badge other">
+                                    <i class="fas fa-code"></i>
+                                    <span>Ferramenta</span>
                                 </div>
                                 <div class="project-overlay">
                                     <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
@@ -503,16 +664,17 @@
                             </div>
                             <div class="project-content">
                                 <h3>Sorteador de Números</h3>
-                                <p>Ferramenta para sorteio de números aleatórios com intervalo personalizável, histórico de sorteios e múltiplos modos de operação.</p>
+                                <p>Ferramenta interativa para sorteio de números aleatórios com intervalo personalizável.</p>
                                 <div class="project-tech">
                                     <span class="tech-tag">HTML</span>
                                     <span class="tech-tag">CSS</span>
                                     <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Algoritmos</span>
                                 </div>
                                 <div class="project-meta">
                                     <span class="project-type">
-                                        <i class="fas fa-user"></i>
-                                        Projeto Pessoal
+                                        <i class="fas fa-code"></i>
+                                        Ferramenta
                                     </span>
                                     <span class="project-status">
                                         <i class="fas fa-code"></i>
@@ -523,16 +685,16 @@
                         </a>
                     </article>
 
-                    <!-- Projeto Pessoal 3 -->
-                    <article class="project-card" data-category="personal" data-tech="html,css,js,chartjs">
+                    <!-- Outro Projeto 3 - Calculadora de Juros Compostos -->
+                    <article class="project-card" data-category="other" data-tech="html,css,js,chartjs">
                         <a href="https://surieltech.github.io/calculadora-juros-compostos/" class="project-link" target="_blank" rel="noopener noreferrer">
                             <div class="project-image">
                                 <img src="src/img/calculadora-juros-compostos-screenshot.png" 
                                     alt="Calculadora Financeira de Juros Compostos" 
                                     loading="lazy">
-                                <div class="project-badge personal">
-                                    <i class="fas fa-user"></i>
-                                    <span>Pessoal</span>
+                                <div class="project-badge other">
+                                    <i class="fas fa-code"></i>
+                                    <span>Aplicação</span>
                                 </div>
                                 <div class="project-overlay">
                                     <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
@@ -540,17 +702,17 @@
                             </div>
                             <div class="project-content">
                                 <h3>Calculadora de Juros Compostos</h3>
-                                <p>Calculadora financeira avançada para simulação de investimentos com juros compostos, gráficos interativos e relatórios.</p>
+                                <p>Aplicação financeira avançada para simulação de investimentos com juros compostos.</p>
                                 <div class="project-tech">
                                     <span class="tech-tag">HTML</span>
                                     <span class="tech-tag">CSS</span>
                                     <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">Chart.js</span>
+                                    <span class="tech-tag">Math</span>
                                 </div>
                                 <div class="project-meta">
                                     <span class="project-type">
-                                        <i class="fas fa-user"></i>
-                                        Projeto Pessoal
+                                        <i class="fas fa-code"></i>
+                                        Aplicação
                                     </span>
                                     <span class="project-status">
                                         <i class="fas fa-code"></i>
@@ -561,109 +723,35 @@
                         </a>
                     </article>
 
-                    <!-- Projeto Pessoal 4 -->
-                    <article class="project-card" data-category="personal" data-tech="html,css,js">
+                    <!-- Outro Projeto 4 - Gerador de CPF -->
+                    <article class="project-card" data-category="other" data-tech="html,css,js">
                         <a href="https://surieltech.github.io/sorteador-de-numeros/" class="project-link" target="_blank" rel="noopener noreferrer">
                             <div class="project-image">
                                 <img src="src/img/gerador-de-cpf-screenshot.png" 
-                                    alt="Gerador de Cpf" 
+                                    alt="Gerador de CPF Válido" 
                                     loading="lazy">
-                                <div class="project-badge personal">
-                                    <i class="fas fa-user"></i>
-                                    <span>Pessoal</span>
+                                <div class="project-badge other">
+                                    <i class="fas fa-code"></i>
+                                    <span>Utilitário</span>
                                 </div>
                                 <div class="project-overlay">
                                     <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3>Gerador de Cpf</h3>
-                                <p>Ferramenta para geração de cpf aleatórios mas funcionais, com explicação do processo de geração do cpf.</p>
+                                <h3>Gerador de CPF Válido</h3>
+                                <p>Utilitário para geração de CPFs aleatórios e matematicamente válidos, com explicação detalhada do algoritmo de validação e dígitos verificadores.</p>
                                 <div class="project-tech">
                                     <span class="tech-tag">HTML</span>
                                     <span class="tech-tag">CSS</span>
                                     <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Algoritmo</span>
+                                    <span class="tech-tag">Validação</span>
                                 </div>
                                 <div class="project-meta">
                                     <span class="project-type">
-                                        <i class="fas fa-user"></i>
-                                        Projeto Pessoal
-                                    </span>
-                                    <span class="project-status">
                                         <i class="fas fa-code"></i>
-                                        Open Source
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Projeto Pessoal 5 -->
-                    <article class="project-card" data-category="personal" data-tech="html,css,js,responsive">
-                        <a href="https://surieltech.github.io/landing-page-restaurante/" class="project-link" target="_blank" rel="noopener noreferrer">
-                            <div class="project-image">
-                                <img src="src/img/landing-page-restaurante-screenshot.png" 
-                                    alt="Landing Page Responsiva para Restaurante" 
-                                    loading="lazy">
-                                <div class="project-badge personal">
-                                    <i class="fas fa-user"></i>
-                                    <span>Pessoal</span>
-                                </div>
-                                <div class="project-overlay">
-                                    <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Landing Page de Restaurante</h3>
-                                <p>Site responsivo para restaurante com cardápio digital, galeria de imagens, carrossel de eventos e design otimizado para mobile.</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag">HTML</span>
-                                    <span class="tech-tag">CSS</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">Responsive</span>
-                                </div>
-                                <div class="project-meta">
-                                    <span class="project-type">
-                                        <i class="fas fa-user"></i>
-                                        Projeto Pessoal
-                                    </span>
-                                    <span class="project-status">
-                                        <i class="fas fa-code"></i>
-                                        Open Source
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Projeto Pessoal 6 -->
-                    <article class="project-card" data-category="personal" data-tech="html,css,js,responsive">
-                        <a href="https://surieltech.github.io/landing-page-barbearia/" class="project-link" target="_blank" rel="noopener noreferrer">
-                            <div class="project-image">
-                                <img src="src/img/landing-page-barbearia-screenshot.png" 
-                                    alt="Landing Page Responsiva para Barbearia" 
-                                    loading="lazy">
-                                <div class="project-badge personal">
-                                    <i class="fas fa-user"></i>
-                                    <span>Pessoal</span>
-                                </div>
-                                <div class="project-overlay">
-                                    <span><i class="fas fa-external-link-alt"></i> Ver Projeto</span>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Landing Page de Barbearia</h3>
-                                <p>Site responsivo para barbearia com catálogo de serviços, galeria de imagens, carrossel de avaliações e design otimizado para mobile.</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag">HTML</span>
-                                    <span class="tech-tag">CSS</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">Responsive</span>
-                                </div>
-                                <div class="project-meta">
-                                    <span class="project-type">
-                                        <i class="fas fa-user"></i>
-                                        Projeto Pessoal
+                                        Utilitário
                                     </span>
                                     <span class="project-status">
                                         <i class="fas fa-code"></i>
